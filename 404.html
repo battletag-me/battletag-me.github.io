@@ -1,0 +1,49 @@
+<!doctype html>
+
+<style>
+  body {
+    font: 18px Georgia;
+    font-weight: bold;
+    text-align: center;
+    margin: 4em;
+  }
+
+  a {
+    color: #123;
+  }
+</style>
+
+<title id=title>battletag.me</title>
+
+<main id=main hide>
+  <h1 id=heading>
+    <a href="http://battletag.me/NAME#KEY" templated>NAME#KEY</a>
+  </h1>
+  <p>
+  <a href="https://playoverwatch.com/en-us/career/pc/us/NAME-KEY" templated>Overwatch</a>
+  </p>
+  <p>
+    <a href="http://us.battle.net/d3/en/profile/NAME-KEY" templated>Diablo 3</a>
+  </p>
+</main>
+
+<script>'use strict'; ~function(){
+  const name = 'foo'; location.pathname.slice(1);
+  const key = location.hash.slice(1);
+
+  title.textContent = `battletag.me/${name}#${key}`;
+
+  for (const el of Array.from(document.querySelectorAll('[templated]'))) {
+    el.textContent = el.textContent
+      .replace(/NAME/, name)
+      .replace(/KEY/, key);
+
+    if (el.href) {
+      el.href = el.href
+        .replace(/NAME/, name)
+        .replace(/KEY/, key);
+    }
+  }
+
+  main.removeAttribute('hide');
+}();</script>
