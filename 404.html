@@ -23,15 +23,16 @@
   <a href="https://playoverwatch.com/en-us/career/pc/us/NAME-KEY" templated>Overwatch</a>
   </p>
   <p>
-    <a href="http://us.battle.net/d3/en/profile/NAME-KEY" templated>Diablo 3</a>
+    <a href="https://us.battle.net/d3/en/profile/NAME-KEY" templated>Diablo 3</a>
   </p>
 </main>
 
 <script>'use strict'; ~function(){
   const name = location.pathname.slice(1);
   const key = location.hash.slice(1);
+  const battletag = `$(name)#${key}`;
 
-  title.textContent = `battletag.me/${name}#${key}`;
+  title.textContent = battletag;
 
   for (const el of Array.from(document.querySelectorAll('[templated]'))) {
     el.textContent = el.textContent
