@@ -3,13 +3,14 @@
 <style>
   body {
     font: 18px Georgia;
-    font-weight: bold;
     text-align: center;
     margin: 4em;
   }
 
   a {
-    color: #123;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
   }
 </style>
 
@@ -20,10 +21,10 @@
     <a href="http://battletag.me/NAME#KEY" templated>NAME#KEY</a>
   </h1>
   <p>
-  <a href="https://playoverwatch.com/en-us/career/pc/us/NAME-KEY" templated>Overwatch</a>
+    <a href="https://playoverwatch.com/en-us/career/pc/us/NAME-KEY" templated>Overwatch</a>
   </p>
   <p>
-    <a href="https://us.battle.net/d3/en/profile/NAME-KEY" templated>Diablo 3</a>
+    <a href="https://us.battle.net/d3/en/profile/NAME-KEY/" templated>Diablo 3</a>
   </p>
 </main>
 
@@ -35,14 +36,10 @@
   title.textContent = battletag;
 
   for (const el of Array.from(document.querySelectorAll('[templated]'))) {
-    el.textContent = el.textContent
-      .replace(/NAME/, name)
-      .replace(/KEY/, key);
+    el.textContent = el.textContent.replace(/NAME/, name).replace(/KEY/, key);
 
     if (el.href) {
-      el.href = el.href
-        .replace(/NAME/, name)
-        .replace(/KEY/, key);
+      el.href = el.href.replace(/NAME/, name).replace(/KEY/, key);
     }
   }
 
