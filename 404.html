@@ -28,7 +28,7 @@
 </main>
 
 <script>'use strict'; ~function(){
-  const name = 'foo'; location.pathname.slice(1);
+  const name = location.pathname.slice(1);
   const key = location.hash.slice(1);
 
   title.textContent = `battletag.me/${name}#${key}`;
